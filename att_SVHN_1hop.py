@@ -27,7 +27,7 @@ parser.add_argument('--data_aug', type=eval, default=False, choices=[True, False
 parser.add_argument('--lr', type=float, default=0.01)
 parser.add_argument('--batch_size', type=int, default=256)
 parser.add_argument('--test_batch_size', type=int, default=1000) 
-parser.add_argument('--save', type=str, default='./att_SVHN_1HOP/') 
+parser.add_argument('--save', type=str, default='./att_SVHN_1HOP') 
 parser.add_argument('--debug', action='store_true')
 parser.add_argument('--gpu', type=int, default=0)
 parser.add_argument('--epsilon', type=float, default = 0.01)
