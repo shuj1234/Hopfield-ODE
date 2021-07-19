@@ -231,10 +231,10 @@ class concatBlock(nn.Module):
 
 class ODEBlock(nn.Module):
 
-    def __init__(self, odefunc):
+    def __init__(self, odefunc, t):
         super(ODEBlock, self).__init__()
         self.odefunc = odefunc 
-        self.integration_time = torch.tensor([0, 1]).float()
+        self.integration_time = torch.tensor([0, t]).float()
 
     def forward(self, x):
         self.integration_time = self.integration_time.type_as(x)
@@ -601,7 +601,7 @@ if __name__ == '__main__':
     
     concat_layer = [concatBlock()]
 
-    feature_layers = [ODEBlock(ODEfunc(NC))] 
+    feature_layers = [ODEBlock(ODEfunc(NC), reif_time)] 
     
     norm_layer_before_reif = [norm(NC)]
     
